@@ -20,6 +20,12 @@ where $(W(t)$ is a Wiener process, $\mu$ is the mean stock price, $\sigma$ is it
 
 In the plots below, the stock price of Nvidia Corporation was predicted by calculating the mean and standard deviation of the stock using data from 11 months ago to 5.5 months ago from Yahoo Finance. A prediction of the stock was then made for the current day using Monte Carlo statistical analysis, yielding the following results.
 
+![Prediction of Nvidia stock with 10,000 simulations](https://github.com/andersoren/Python-Finance/assets/79542922/ee1f4747-433f-4bfe-a6bb-d9a7106e7c1a)
 On the right, simulation of 10,000 random walks using the mean (average stock price) and standard deviation (volatility) extracted from NVIDIA data dating from December 2022 to mid-May 2023, shown on the left.
 
+
+![Statistical analysis of prediction vs actual value](https://github.com/andersoren/Python-Finance/assets/79542922/52e7bd61-52c0-4a2f-86fe-4f66be69a4d4)
 Prediction of stock price compared to the current stock price value, raw value, and natural log value.
+
+The $numpy$ function $cumsum$ was used to incrementally add up each step of the sampled random walks. This process was effectively much faster than the one used for the 2D random walk. We note that in Figure \ref{plot6}, the prediction of stock prices predictions only follow a bell-curve (continuous this time) when we take the natural logarithm of the predicted prices. This is due to the fact that in Geometric Brownian Motion the Wiener Process, or the random walk is in the exponential. \\
+The mean price predicted per stock was $576$USD compared to the real value of $440$USD. There are additional factors that must be included in stock market analysis if an investment is to be made which is not captured by GBM. This model, despite its obvious flaws, builds the foundation for all options pricing in finance.
